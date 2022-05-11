@@ -3,25 +3,26 @@
 let pintaShiny;
 var actualPokemon = Math.floor(Math.random() * 897);
 class Pokemon {
-    constructor(imagen,imagenShiny,nombre,exp,ataque,shiny){
+    constructor(imagen,imagenShiny,nombre,espAtaque,ataque,vida,shiny){
         this.imagen = imagen;
         this.imagenShiny = imagenShiny;
         this.nombre = nombre;
-        this.exp = exp;
+        this.espAtaque = espAtaque;
         this.ataque = ataque;
+        this.vida = vida;
         this.shiny = shiny;
     }
 }
 let p;
 function getPokemon(numPokemon) {
-    let RandShiny = Math.floor(Math.random() * 2); // 1/4096
+    let RandShiny = Math.floor(Math.random() * 4095); // 1/4096
     let esShiny = true;
     return HTTP.ajax('GET',`https://pokeapi.co/api/v2/pokemon/`+ numPokemon).then(
         data => {
             if(RandShiny==1) esShiny = true;
             else esShiny = false;
             pintaShiny = esShiny;
-            p = new Pokemon(data.sprites.front_default, data.sprites.front_shiny, data.name, data.base_experience, data.stats[1].base_stat, esShiny);
+            p = new Pokemon(data.sprites.front_default, data.sprites.front_shiny, data.name, data.stats[3].base_stat,data.stats[1].base_stat, data.stats[0].base_stat, esShiny);
             PintaPokemon(p);
         }
     )
@@ -60,13 +61,15 @@ botonCambio.addEventListener("click", function( event ) {
     }, true);
 
 
-let capa = document.querySelector(".pokemon");
+
 function PintaPokemon(pokemon){
-    const nombreBien = pokemon.nombre.charAt(0).toUpperCase() + pokemon.nombre.slice(1) + " [ "+actualPokemon+" ]";
+    let nombrePokemon = pokemon.nombre;
+    const nombreBien = nombrePokemon.slice(0,1).toUpperCase() + nombrePokemon.slice(1) + " [ "+actualPokemon+" ]";
     
     document.querySelector(".card-title").innerHTML=nombreBien;
-    document.getElementById("exp").innerHTML="EXPERIENCE - "+pokemon.exp;
-    document.getElementById("att").innerHTML="ATTACK - "+pokemon.ataque;
+    document.getElementById("espAtt").innerHTML="Attack - "+pokemon.ataque;
+    document.getElementById("att").innerHTML="Special Attack - "+pokemon.espAtaque;
+    document.getElementById("hp").innerHTML="HP - "+pokemon.vida;
     let botonShiny;
     if (pokemon.shiny) {
         document.querySelector(".card-img-top").setAttribute("src",pokemon.imagenShiny);
@@ -80,5 +83,5 @@ function PintaPokemon(pokemon){
 
     
 }
-PintaPokemon(getPokemon(actualPokemon));
-buscaPokemon();
+
+getPokemon(actualPokemon);
