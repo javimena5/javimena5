@@ -1,21 +1,27 @@
 'use strict'
-let capa = document.querySelector(".pokemon");
+
+let pintaShiny;
 var actualPokemon = Math.floor(Math.random() * 897);
 class Pokemon {
-    constructor(imagen,nombre,exp,ataque){
+    constructor(imagen,imagenShiny,nombre,exp,ataque,shiny){
         this.imagen = imagen;
+        this.imagenShiny = imagenShiny;
         this.nombre = nombre;
         this.exp = exp;
         this.ataque = ataque;
+        this.shiny = shiny;
     }
 }
+let p;
 function getPokemon(numPokemon) {
-    let shiny = Math.floor(Math.random() * 4095); // 1/4096
+    let RandShiny = Math.floor(Math.random() * 2); // 1/4096
+    let esShiny = true;
     return HTTP.ajax('GET',`https://pokeapi.co/api/v2/pokemon/`+ numPokemon).then(
         data => {
-            let p;
-            if(shiny==1) p = new Pokemon(data.sprites.front_shiny,data.name,data.base_experience,data.stats[1].base_stat);
-            else p = new Pokemon(data.sprites.front_default,data.name,data.base_experience,data.stats[1].base_stat)
+            if(RandShiny==1) esShiny = true;
+            else esShiny = false;
+            pintaShiny = esShiny;
+            p = new Pokemon(data.sprites.front_default, data.sprites.front_shiny, data.name, data.base_experience, data.stats[1].base_stat, esShiny);
             PintaPokemon(p);
         }
     )
@@ -46,18 +52,33 @@ botonBuscar.addEventListener("click", function( event ) {
     }
 }, true);
 
+let botonCambio = document.querySelector(".shiny");
+botonCambio.addEventListener("click", function( event ) {
+    pintaShiny = !pintaShiny;
+    if (pintaShiny) document.querySelector(".card-img-top").setAttribute("src",p.imagenShiny);
+    else document.querySelector(".card-img-top").setAttribute("src",p.imagen);
+    }, true);
+
+
+let capa = document.querySelector(".pokemon");
 function PintaPokemon(pokemon){
-    let cadena = "";
     const nombreBien = pokemon.nombre.charAt(0).toUpperCase() + pokemon.nombre.slice(1) + " [ "+actualPokemon+" ]";
-    cadena += "<div class=\"card\">";
-    cadena += "<img class=\"card-img-top\" src=\""+pokemon.imagen+"\">"
-    cadena+= "<div class=\"card-body\">"
-    cadena+= "<h5 class=\"card-title\">"+nombreBien+"</h5>"
-    cadena+= "<div class=\"card-text\">EXP - "+pokemon.exp+"</div>"
-    cadena+= "<div class=\"card-text\">ATTACK - "+pokemon.ataque+"</div>"
-    cadena += "</div></div>"
-    capa.innerHTML = cadena;
-    console.log(pokemon.nombre)
+    
+    document.querySelector(".card-title").innerHTML=nombreBien;
+    document.getElementById("exp").innerHTML="EXPERIENCE - "+pokemon.exp;
+    document.getElementById("att").innerHTML="ATTACK - "+pokemon.ataque;
+    let botonShiny;
+    if (pokemon.shiny) {
+        document.querySelector(".card-img-top").setAttribute("src",pokemon.imagenShiny);
+        botonShiny="Ver Normal";
+    }
+    else {
+        document.querySelector(".card-img-top").setAttribute("src",pokemon.imagen);
+        botonShiny="Ver Shiny";
+    }
+    document.querySelector(".shiny").innerHTML=botonShiny;
+
+    
 }
 PintaPokemon(getPokemon(actualPokemon));
 buscaPokemon();
