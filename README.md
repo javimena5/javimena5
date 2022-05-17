@@ -1,4 +1,4 @@
-pokemon.hmtl
+pokemon.html
 
 Data from API: https://pokeapi.co
 
