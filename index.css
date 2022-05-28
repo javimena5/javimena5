@@ -57,3 +57,14 @@ footer {
     align-items: center;
     justify-content: end;
 }
+
+@media screen and (max-width: 481px){
+
+    .ficha {
+        width: 60vw;
+        height: 20vh;
+        border-radius: 1rem;
+        transition: all 0.5s ease-in-out;
+    }
+
+}
