@@ -75,3 +75,13 @@ footer {
     align-items: center;
     justify-content: end;
 }
+
+@media screen and (max-width: 481px){
+
+    .ficha {
+        width: 50vw;
+    }
+    .button {
+        width: 50vw;
+    }
+}

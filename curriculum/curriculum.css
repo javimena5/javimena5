@@ -41,7 +41,6 @@ a {
 
 
 .button:hover {
-    border-radius: 0.5rem;
     border: 3px solid rgb(255, 0, 0);
 }
 
@@ -56,6 +55,17 @@ a {
 
 
 .pdf:hover {
-    border-radius: 0.5rem;
     border: 3px solid rgb(58, 202, 38);
+}
+
+@media screen and (max-width: 481px){
+
+    .button {
+        width: 50vw;
+    }
+
+    .pdf {
+        width: 50vw;
+    }
+
 }
