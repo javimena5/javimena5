@@ -1,5 +1,1 @@
-pokemon.html
-
-Data from API: https://pokeapi.co
-
-Developed by @javimena5
+Developed by Javier de Mena Asenjo (GitHub: @javimena5)

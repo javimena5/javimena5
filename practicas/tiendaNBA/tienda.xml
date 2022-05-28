@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<tienda>
+    <camiseta>
+        <foto>https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/93143140-cfc4-42ac-a178-552658823021/camiseta-jordan-nba-swingman-stephen-curry-warriors-statement-edition-2020-fMgRR7.png</foto>
+        <title>Golden State Warriors</title>
+        <desc>Stephen Curry, Statement Edition 2020</desc>
+        <precio moneda="&#8364;">110</precio>
+    </camiseta>
+    <camiseta>
+        <foto>https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/76617ec4-0bd5-4025-a74d-6ca8ec61288c/jersey-dri-fit-adv-nba-authentic-los-angeles-lakers-city-edition-rtL0Wc.png</foto>
+        <title>Los Angeles Lakers</title>
+        <desc>LeBron James, City Edition 2021</desc>
+        <precio moneda="&#8364;">225</precio>
+    </camiseta>
+    <camiseta>
+        <foto>https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4b40d436-936f-4350-927d-a14b5c6d1b68/jersey-de-alero-polivalente-dallas-mavericks-city-edition-dri-fit-nba-RqW9CC.png</foto>
+        <title>Dallas Mavericks</title>
+        <desc>Luka Dončić, City Edition 2021</desc>
+        <precio moneda="&#8364;">130</precio>
+    </camiseta>
+    <camiseta>
+        <foto>https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/69e8618a-96bc-40ab-8cea-60a7404479e8/camiseta-nba-swingman-damian-lillard-trail-blazers-icon-edition-2020-kdgk2W.png</foto>
+        <title>Portland Trailblazers</title>
+        <desc>Damian Lillard, Icon Edition 2020</desc>
+        <precio moneda="&#8364;">110</precio>
+    </camiseta>
+    <camiseta>
+        <foto>https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/bdd80f56-ed75-4a08-8dde-46b393ebf370/camiseta-nba-swingman-heat-icon-edition-2020-D3bRDc.png</foto>
+        <title>Miami Heat</title>
+        <desc>Jimmy Butler, Icon Edition 2021</desc>
+        <precio moneda="&#8364;">110</precio>
+    </camiseta>
+    <camiseta>
+        <foto>https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/61ba4a43-f879-4f64-98b5-0ee333f88127/camiseta-nba-swingman-clippers-association-edition-2020-zLvP2M.png</foto>
+        <title>Los Angeles Clippers</title>
+        <desc>Kawhi Leonard, Association Edition 2021</desc>
+        <precio moneda="&#8364;">110</precio>
+    </camiseta>
+</tienda>
