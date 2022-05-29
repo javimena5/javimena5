@@ -1,3 +1,10 @@
-.ficha{
-    font-size: small;
+
+.ficha:hover{
+    width: 30vw;
+}
+
+@media screen and (max-width: 481px){
+    .ficha{
+        font-size: small;
+    }
 }

@@ -36,7 +36,7 @@ main {
 
 .ficha:hover{
     cursor: pointer;
-    width: 50vw;
+    width: 40vw;
     background-color: #c1c1ff !important;
 }
 a {
@@ -50,39 +50,63 @@ a {
 }
 
 .button {
-    color: white;
+    color: white !important;
+    position: relative;
     width: 5vw;
     height: 2rem;
     border-radius: 0.5rem;
     border: 3px solid rgb(255, 255, 255);
     padding: 10px;
+    background: #aa2020;
 }
 
-
-.button:hover {
-    border: 3px solid rgb(255, 0, 0);
+.button:before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(255, 136, 136, 0.151);
+    transition: all 0.5s ease;
+}
+.button:hover::before {
+    width: 100%;
 }
 
 .pdf {
     color: white;
+    position: relative;
     margin: 1vh;
     width: 9vw;
     height: 2rem;
     border-radius: 0.5rem;
     border: 3px solid rgb(255, 255, 255);
     padding: 10px;
+    background-color: rgb(54, 173, 74);
 }
-
-
-.pdf:hover {
-    border: 3px solid rgb(58, 202, 38);
+.pdf:before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 0px;
+    width: 100%;
+    background-color: rgba(171, 255, 160, 0.13);
+    transition: all 0.5s ease;
+}
+.pdf:hover::before {
+    height: 100%;
 }
 
 img {
     height: 4vh;
     margin-left: 2vw;
 }
-
+embed {
+    width: 80vw;
+    height: 80vh;
+}
 @media screen and (max-width: 481px){
 
     .ficha {
