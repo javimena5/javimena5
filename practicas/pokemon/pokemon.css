@@ -8,6 +8,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 
     background-image: url("https://wallpapercave.com/wp/wc1808325.jpg");
     background-attachment: fixed;
