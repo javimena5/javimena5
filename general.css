@@ -126,6 +126,10 @@ embed {
     img {
         height: 7vw;
     }
+    embed{
+        width: 90vw;
+        height: 60vh;
+    }
 
 
 }

@@ -5,3 +5,11 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 481px){
+    .botones{
+        width: 90vw;
+        font-size: large;
+    }
+    
+}
