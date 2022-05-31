@@ -1,0 +1,58 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.principal{
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ficha {
+    border: 4px white solid;
+    margin: 2rem;
+    width: 30vw;
+    position: relative;
+}
+
+.ficha:before{
+    content: "";
+    border-radius: 1rem;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background-color: #c1c1ff4b;
+    transition: all 1s ease;
+}
+
+.ficha:hover {
+    background-color: white !important;
+    width: 30vw;
+}
+.ficha:hover:before {
+    width: 30vw;
+}
+.button{
+    width: 20vh;
+}
+
+@media screen and (max-width: 481px){
+
+    .ficha {
+        width: 75vw;
+        min-width: 75vw;
+        height: 20vh;
+        border-radius: 1rem;
+        transition: all 0.5s ease-in-out;
+    }
+    .button {
+        width: 50vw;
+        margin-bottom: 2rem;
+    }
+
+
+}
