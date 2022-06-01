@@ -42,8 +42,12 @@ main {
 
 @media screen and (max-width: 481px){
 
+    .principal{
+        margin-top: 60vh;
+        flex-direction: column !important;
+    }
     .ficha {
-        width: 75vw;
+        width: 60vw;
         min-width: 75vw;
         height: 20vh;
         border-radius: 1rem;
