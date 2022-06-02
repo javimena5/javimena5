@@ -15,25 +15,11 @@ main {
     margin: 2rem;
     width: 30vw;
     position: relative;
-}
-
-.ficha:before{
-    content: "";
-    border-radius: 1rem;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 0px;
-    height: 100%;
-    background-color: #c1c1ff4b;
-    transition: all 1s ease;
+    transition: all 0.2s ease-in-out;
 }
 
 .ficha:hover {
-    background-color: white !important;
-    width: 30vw;
-}
-.ficha:hover:before {
+    background-color: rgb(145, 187, 255) !important;
     width: 30vw;
 }
 .button{
